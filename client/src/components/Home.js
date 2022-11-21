@@ -3,13 +3,17 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {NavLink} from "react-router-dom";
 import axios from "axios";
-import moment from "moment"
+import moment from "moment";
+import Alert from 'react-bootstrap/Alert';
 
 
 const Home = () => {
 
     const [data, setData] = useState([]);
-    console.log(data)
+    // console.log(data)
+
+    const [show, setShow] = useState(false);
+
 
     const getUserData = async () => {
         const res = await axios.get("/getdata", {
@@ -24,12 +28,33 @@ const Home = () => {
         }
     }
 
+    const dltUser = async (id) => {
+        const res = await axios.delete(`/${id}`, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (res.data.status === 401 || !res.data) {
+            console.log("errror")
+        } else {
+            console.log("user delete");
+            setShow(true)
+        }
+    }
+
     useEffect(() => {
         getUserData()
-    },[])
+    },[dltUser])
 
   return (
       <>
+
+        {
+            show ?  <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+            <Alert.Heading>User Delete</Alert.Heading>
+            </Alert> : ""
+        }
         <div className="container mt-2">
             <h1 className="text-center mt-2">
                 Football blog project
@@ -60,7 +85,7 @@ const Home = () => {
                                     <Card.Text>
                                         Date Added: {moment(element.date).format("L")}
                                     </Card.Text>
-                                    <Button variant="danger" className="col-lg-6 text-center">Delete</Button>
+                                    <Button variant="danger" className="col-lg-6 text-center" onClick={()=>dltUser(element._id)}>Delete</Button>
                                     </Card.Body>
                                     </Card>
                                 </>

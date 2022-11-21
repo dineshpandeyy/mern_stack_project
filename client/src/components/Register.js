@@ -57,15 +57,15 @@ const Register = () => {
   return (
     <>
     <div className="containe mt-3">
-      <h1>Upload your img here</h1>
+      <h1>Upload your blog information</h1>
       <Form className="mt-3">
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>User Name</Form.Label>
+        <Form.Label>Match Name</Form.Label>
         <Form.Control type="text" placeholder="" name='fname' onChange={setData}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Select your image</Form.Label>
+        <Form.Label>Select the related image</Form.Label>
         <Form.Control type="file" placeholder="" name="photo" onChange={setImgFile}/>
       </Form.Group>
 
