@@ -12,9 +12,13 @@ const userSchema = new mongoose.Schema({
     },
     date: {
         type:Date
+    },
+    view: {
+        type: String,
+        required: true
     }
 });
 
 // creating model
-const users = new mongoose.model("users", userSchema)
+const users = new mongoose.model("users", userSchema);
 module.exports = users;
