@@ -60,7 +60,7 @@ const Home = () => {
                 Football blog project
             </h1>
             <div className="text-end">
-                <Button variant="danger"><NavLink to="/register" className="text-decoration-none text-black">Post Blog</NavLink></Button>{' '}
+                <Button variant="warning"><NavLink to="/register" className="text-decoration-none text-black">Post Blog</NavLink></Button>{' '}
             </div>
 
             <div className="row d-flex justify-content-between align-items-center mt-5">
