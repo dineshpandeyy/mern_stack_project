@@ -14,9 +14,9 @@ app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json()) 
 
 
-// app.get("/", (req,res)=>{
-//     res.send("server is started!!!")
-// })
+app.get("/", (req,res)=>{
+    res.send("server is started!!!")
+})
 app.use(router);
 
 app.use("/uploads", express.static("./uploads"))

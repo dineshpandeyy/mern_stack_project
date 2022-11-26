@@ -9,11 +9,15 @@ import Alert from 'react-bootstrap/Alert';
 
 const Home = () => {
 
-    const [data, setData] = useState([]);
-    // console.log(data)
-
+    const [data, setData] = useState([])
+    const [query, setQuery] = useState("")
     const [show, setShow] = useState(false);
 
+    const filteredItem = data.filter(item => {
+        console.log(item.fname)
+        return item.fname.toLowerCase().includes(query.toLowerCase())
+
+    })
 
     const getUserData = async () => {
         const res = await axios.get("/getdata", {
@@ -21,6 +25,7 @@ const Home = () => {
                 "Content-Type": "application/json"
             }
         });
+        
         if (res.data.status === 401 || !res.data) {
             console.log("errror")
         } else {
@@ -55,6 +60,14 @@ const Home = () => {
             <Alert.Heading>User Delete</Alert.Heading>
             </Alert> : ""
         }
+
+        <input
+          className="search"
+          placeholder="Search..."
+          value={query}
+          onChange = {e => setQuery(e.target.value)}
+        />
+
         <div className="container mt-2">
             <h1 className="text-center mt-2">
                 Football blog project
@@ -66,7 +79,7 @@ const Home = () => {
             <div className="row d-flex justify-content-between align-items-center mt-5">
 
                     {
-                        data.length > 0 ? data.map((element, i) => {
+                        filteredItem.length > 0 ? filteredItem.map((element, i) => {
                             return (
                                 <>
                                     <Card className="mb-3" style={{ width: '22rem',height:"30rem"}}>
@@ -92,7 +105,6 @@ const Home = () => {
                             )
                         }) : ""
                     }
-               
             </div>
         </div>
       </>
