@@ -71,7 +71,7 @@ const Home = () => {
 
         <div className="container mt-2">
             <h1 className="text-center mt-2">
-                Football blog project
+                Let's Talk Football
             </h1>
             <div className="text-end">
                 <Button variant="warning"><NavLink to="/register" className="text-decoration-none text-black">Post Blog</NavLink></Button>{' '}
