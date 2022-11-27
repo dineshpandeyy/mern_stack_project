@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useMemo} from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {NavLink} from "react-router-dom";
@@ -13,11 +13,12 @@ const Home = () => {
     const [query, setQuery] = useState("")
     const [show, setShow] = useState(false);
 
-    const filteredItem = data.filter(item => {
-        console.log(item.fname)
-        return item.fname.toLowerCase().includes(query.toLowerCase())
-
-    })
+    const filteredItem = useMemo(()=> {
+        return data.filter(item => {
+            return item.fname.toLowerCase().includes(query.toLowerCase())
+        })
+    }, [data, query])
+   
 
     const getUserData = async () => {
         const res = await axios.get("/getdata", {
