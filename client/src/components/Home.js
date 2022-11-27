@@ -5,6 +5,8 @@ import {NavLink} from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import Alert from 'react-bootstrap/Alert';
+import Vote from './Vote';
+
 
 
 const Home = () => {
@@ -97,8 +99,10 @@ const Home = () => {
                                     </Card.Text>
 
                                     <Card.Text>
-                                        Date Added: {moment(element.date).format("L")}
+                                        Date Added: {moment(element.date).format("L")} <Vote></Vote>
+                                        
                                     </Card.Text>
+                                    
                                     <Button variant="danger" className="col-lg-6 text-center" onClick={()=>dltUser(element._id)}>Delete</Button>
                                     </Card.Body>
                                     </Card>
