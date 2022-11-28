@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/login";
+import User from "./components/user";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes,Route} from "react-router-dom";
@@ -15,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/newuser" element={<User />}/>
       </Routes>
     </>
   );
