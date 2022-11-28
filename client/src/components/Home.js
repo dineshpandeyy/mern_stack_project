@@ -63,13 +63,15 @@ const Home = () => {
             <Alert.Heading>User Delete</Alert.Heading>
             </Alert> : ""
         }
-
-        <input
-          className="search"
-          placeholder="Search..."
-          value={query}
-          onChange = {e => setQuery(e.target.value)}
-        />
+        <div className="box">
+            <input
+            className="search"
+            placeholder="Search..."
+            value={query}
+            onChange = {e => setQuery(e.target.value)}
+            />
+        </div>
+       
 
         <div className="container mt-2">
             <h1 className="text-center mt-2">
@@ -79,21 +81,16 @@ const Home = () => {
                 <Button variant="warning"><NavLink to="/register" className="text-decoration-none text-black">Post Blog</NavLink></Button>{' '}
             </div>
 
-            <div className="row d-flex justify-content-between align-items-center mt-5">
+            <div className="row d-flex justify-content-between align-items-center mt-5 main-div">
 
                     {
                         filteredItem.length > 0 ? filteredItem.map((element, i) => {
                             return (
                                 <>
-                                    <Card className="mb-3" style={{ width: '22rem',height:"30rem"}}>
+                                    <Card className="mb-3" style={{ width: '22rem',height:"35rem"}}>
                                     <Card.Img style={{ width: '300px',textAlign:"center",margin:"auto"}} variant="top" src= {`/uploads/${element.imgpath}`}/>
                                     <Card.Body className="text-center">
                                     <Card.Title>Match: {element.fname}</Card.Title>
-                                    {/* <Card.Text>
-                                        The night of the Real resurrection! The pure white shirts have shimmered 
-                                        spectacularly once again. And Real Madrid are Paris-bound. Real Madrid will
-                                        play the big game again. The love affair goes on.
-                                    </Card.Text> */}
                                     <Card.Text>
                                         Analysis: {element.view}
                                     </Card.Text>

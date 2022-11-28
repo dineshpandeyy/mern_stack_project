@@ -22,13 +22,6 @@ function Vote() {
   
   return (
     <div>
-        {/* <button onClick={UpVoteHandler} type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-        </button>
-        {vote}
-        <button onClick={DownVoteHandler} type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-        </button> */}
     <button onClick={UpVoteHandler} class="glyphicon glyphicon-arrow-up"> Up </button>
     &nbsp;{vote}&nbsp;
     <button onClick={DownVoteHandler}> Down </button>

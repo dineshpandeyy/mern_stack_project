@@ -3,11 +3,6 @@ export default class Login extends Component {
   render() {
     return (
       <>
-      {/* <div>
-        <% if (messages.error) { %>
-        <%= messages.error %>
-        <% } %>
-      </div> */}
     <form action="/login" method="POST">
         <h3>Sign In</h3>
         <div className="mb-3">
