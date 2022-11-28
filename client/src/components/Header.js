@@ -14,6 +14,7 @@ const Header = () => {
           <Nav className="me-auto">
             <NavLink to="/register" className="text-decoration-none text-light">Register</NavLink>
           </Nav>
+          
         </Container>
       </Navbar>
       </>
