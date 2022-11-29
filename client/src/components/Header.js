@@ -6,6 +6,8 @@ import {NavLink} from "react-router-dom";
 // import Search from "./Search";
 
 const Header = () => {
+
+  
   return (
       <>
         <Navbar bg="primary" variant="dark">
@@ -14,6 +16,7 @@ const Header = () => {
           <Nav className="me-auto">
             <NavLink to="/register" className="text-decoration-none text-light">Register</NavLink>
           </Nav>
+          
           
         </Container>
       </Navbar>

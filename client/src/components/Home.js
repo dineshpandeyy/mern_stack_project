@@ -63,20 +63,28 @@ const Home = () => {
             <Alert.Heading>User Delete</Alert.Heading>
             </Alert> : ""
         }
-        <div className="box">
+        {/* <div className="box">
             <input
             className="search"
             placeholder="Search..."
             value={query}
             onChange = {e => setQuery(e.target.value)}
             />
-        </div>
+        </div> */}
        
 
         <div className="container mt-2">
             <h1 className="text-center mt-2">
                 Let's Talk Football
             </h1>
+            <div className="box">
+                <input
+                className="search"
+                placeholder="Search..."
+                value={query}
+                onChange = {e => setQuery(e.target.value)}
+                />
+            </div>
             <div className="text-end">
                 <Button variant="warning"><NavLink to="/register" className="text-decoration-none text-black">Post Blog</NavLink></Button>{' '}
             </div>
